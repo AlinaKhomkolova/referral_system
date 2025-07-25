@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "8f004f4d-b8a3-4838-b832-ac95332d3d3d",
+		"name": "referral",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37307543"
+	},
+	"item": [
+		{
+			"name": "Отправка кода подтверждения",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFTOKEN",
+						"value": "T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"phone\": \"+79346559036\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/send-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"send-code",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\n  'http://127.0.0.1:8000/api/auth/send-code/' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -H 'X-CSRFTOKEN: T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM' \\\n  -d '{\n  \"phone\": \"+79346559036\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Верификация кода",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFTOKEN",
+						"value": "T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"phone\": \"79346559036\",\n  \"code\": \"1434\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auth/verify/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"verify",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'POST' \\\n  'http://127.0.0.1:8000/api/auth/verify/' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -H 'X-CSRFTOKEN: T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM' \\\n  -d '{\n  \"phone\": \"79346559036\",\n  \"code\": \"1434\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Получение профиля",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFTOKEN",
+						"value": "T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'GET' \\\n  'http://127.0.0.1:8000/api/profile/' \\\n  -H 'accept: application/json' \\\n  -H 'X-CSRFTOKEN: T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM'"
+			},
+			"response": []
+		},
+		{
+			"name": "Активация инвайт-кода",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFTOKEN",
+						"value": "T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"invite_code\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profile/set-invite/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						"set-invite",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl -X 'PUT' \\\n  'http://127.0.0.1:8000/api/profile/set-invite/' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -H 'X-CSRFTOKEN: T5r2yE6peDFIy2J3FPjVFruKpyvjHxXhq7cyUaR74nhtYEbX4OR0DQb7A7TaZFnM' \\\n  -d '{\n  \"invite_code\": \"string\"\n}'"
+			},
+			"response": []
+		}
+	]
+}
