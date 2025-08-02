@@ -49,7 +49,7 @@ ___
 ### 1. Клонирование репозитория
 
 ```bash
-git@github.com:AlinaKhomkolova/referral_system.git
+git clone git@github.com:AlinaKhomkolova/referral_system.git
 cd referral_system
 ````
 
